@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Harapan Polyclinic</title>
+    <link rel="icon" href="images/logohp.png" type="harapan-clinic-logo">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/dashboard.css">
+</head>
+
+<body>
+    
+    <div class="nav">
+        <a class="jam">Time: mon-sat at 9.00 am to 8.00 pm </a>
+        <a class="email">Email: harapanpolyclinic@gmail.com </a>
+        <a class="phone">Phone: +62 123 456 789 </a>
+        <a class="loc">Loc: 123 Main Street, Jakarta, 78901, Indonesia. </a>
+      </div>
+
+    <div class="topnav">
+        <a href="#" class="logo">
+            <img src="images/logohp.png" alt="logo">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="login.html">Online Reservation</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#gallery">Gallery</a>
+        <a href="login.html" class="login">Log in</a>
+      </div>
+
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="images/dm1.jpg" style="width:100%">
+          <div class="text">Service From Doctor</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="images/dm2.jpg" style="width:100%">
+          <div class="text">Service From Doctor</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="images/dm3.jpg" style="width:100%">
+          <div class="text">Service From Doctor</div>
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div><br>
+
+
+        <div class="row">
+          <div class="column" style="background-color:#fcf8f8;">
+           <img src="images/clinic.jpg" width="100%" height="430px">
+          </div>
+          <div class="column" style="background-color:#eef2f5;" id="about">
+            <h1>About Us</h1>
+            <p><b>Harapan Polyclinic</b></p>
+            <p>PT. Harapan Kita Semua</p>
+             <p>The Harapan Polyclinic is a healthcare center located in Jakarta, committed to providing quality healthcare services. We focus on the treatment of common illnesses, routine health check-ups, and other healthcare services.</p>
+             <h4>Vision</h4>
+             <p>To become a leading healthcare provider in delivering comprehensive and quality care to the community.</p>
+             <h4>Mission</h4>
+             <ul>
+               <li>Providing innovative and affordable healthcare services.</li>
+               <li>Prioritizing patient satisfaction</li>
+               <li>Collaborating with high quality medical professionals.</li>
+             </ul>
+          </div>
+        </div> <br>
+        
+        <h2 id="services" style="text-align: center;">Services</h2>
+        <p style="text-align: center;">We provide health services ready to assist all of you, here are various services that you can choose according to your needs!</p>
+
+        <div class="row">
+        <div class="column1">
+            <div class="card">
+            <h3>General Poly</h3>
+            <!--<p><img src="images/drumum.png" width="200px" height="180px"></p>
+            <p><b>Dr. Andi Satya Wacana</b></p>-->
+            <p style="text-align: center;">The health service activities provided include health examinations, medical procedures and first level or basic medical treatment. And can refer patients to specialist doctors for further treatment.</p>
+            <button class="button button1">Price Check</button>
+            </div>
+        </div>
+
+        <div class="column1">
+          <div class="card">
+            <h3>Dental Poly</h3>
+            <!--<p><img src="images/drgigi.jpeg" width="200px" height="180px"></p>
+            <p><b>Drg. Nadia Putri Anastasia</b></p>-->
+            <p style="text-align: center;">Dental poly is a specialized service that caters to dental and oral care. Dental polyclinics also provide preventive services, cavity treatments and various other procedures related to dental and oral health.</p>
+            <button class="button button1">Price Check</button>
+           </div>
+        </div>
+        
+        <div class="column1">
+            <div class="card">
+              <h3>Cardiology Poly</h3>
+              <!--<p><img src="images/drjantung.png" width="180px" height="180px"></p>
+              <p><b>Dr. Eka Prasetya, SP.JP</b></p>-->
+              <p style="text-align: center;">It is a specialized department that deals with the diagnosis, treatment, and care of heart related conditions and diseases.  In a cardiology can consultations and treatment for various heart related issues.</p>
+              <button class="button button1">Price Check</button>
+            </div>
+        </div>
+        
+        <div class="column1">
+          <div class="card">
+            <h3>Pediatric Poly</h3>
+            <!--<p><img src="images/dranak.png" width="200px" height="180px"></p>
+            <p><b>Dr. Sinta Maharani, SP. A</b></p>-->
+            <p style="text-align: center;">A pediatric poli is provide check ups, vaccinations, treatments, and consultations for children's health and development issues. The pediatric clinic also provides guidance to parents regarding child care.</p>
+            <button class="button button1">Price Check</button>
+           </div>
+        </div>
+
+        <div class="column1">
+          <div class="card">
+            <h3>Ophthalmology Poly</h3>
+            <!--<p><img src="images/drmata.jpg" width="200px" height="180px"></p>
+            <p><b>Dr. Farhan Abdullah, Sp.M</b></p>-->
+            <p style="text-align: center;">Ophthalmology Poly is a specialized department that addresses various eye health issues. Here, patients can undergo eye examinations, and receive treatments and medical procedures related to eye health.</p>
+            <button class="button button1">Price Check</button>
+           </div>
+        </div>
+      </div><br>
+
+
+
+      
+
+           
+      <h2 style="text-align: center;" id="doctors">Doctors</h2>
+
+      <p style="text-align: center;">The doctors at Harapan Polyclinic, who are reliable, are ready to serve all of you.</p>
+
+      <div class="row">
+        <div class="column2">
+          <div class="card2">
+            <img src="images/drumum1.jpg" alt="dr umum 2" style="width:100%">
+            <div class="container">
+              <h2>Dr. Antonio</h2>
+              <p class="title">General Practitioner</p>
+            </div>
+          </div>
+        </div>     
+        <div class="column2">
+          <div class="card2">
+            <img src="images/dranak3.jpg" alt="dr anak 3" style="width:100%">
+            <div class="container">
+              <h2>Dr. Ling Ling, SP. A</h2>
+              <p class="title">Pediatrician</p>
+            </div>
+          </div>
+        </div>
+        <div class="column2">
+          <div class="card2">
+            <img src="images/drgigi1.jpeg" alt="dr gigi" style="width:100%">
+            <div class="container">
+              <h2>Drg. Ahmad Abdullah</h2>
+              <p class="title">Dentist</p>
+            </div>
+          </div>
+        </div>
+        <div class="column2">
+          <div class="card2">
+            <img src="images/drmata.jpg" alt="dr mata" style="width:100%">
+            <div class="container">
+              <h2>Dr. Farhan Abdullah, Sp.M</h2>
+              <p class="title">Ophthalmologist</p>
+            </div>
+          </div>
+        </div>
+        <div class="column2">
+          <div class="card2">
+            <img src="images/drjantung.jpg" alt="dr jantung" style="width:100%">
+            <div class="container">
+              <h2>Dr. Eka Prasetya, SP.JP</h2>
+              <p class="title">Cardiologist</p>
+            </div>
+          </div>
+        </div>
+        </div><br>
+
+
+              
+
+        <h2  style="text-align: center; margin-top: 10px;"id="gallery" >Gallery</h2>
+        <p style="text-align: center;">Precious Moments.</p>
+
+        <div class="scroll-container">
+          <img src="images/cekanak.jpg" alt="Cinque Terre" width="600" height="400">
+          <img src="images/cekmata2.jpg" alt="Forest" width="600" height="400">
+          <img src="images/cekgigi.jpeg" alt="Northern Lights" width="600" height="400">
+          <img src="images/cekjantung.jpg" alt="Mountains" width="600" height="400">
+          <img src="images/cekumum.jpg" alt="Mountains" width="600" height="400">
+        </div>
+        
+
+          <script src="js/dashboard.js"></script>
+      
+</body>
+</html>
