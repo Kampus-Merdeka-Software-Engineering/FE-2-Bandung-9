@@ -1,15 +1,30 @@
-body, html {
+body, html {t
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #eff2f3;
+  background: linear-gradient(45deg, #a4b3b6, #ffffff, #cbe4f5, #b8dffa); 
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s infinite;
 }
+
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
 
 * {
   box-sizing: border-box;
 }
 
 .buttonback {
-    background-color: #1d498a; /* Green */
+    background-color: #1d498a; 
     border: none;
     color: white;
     padding: 10px;
@@ -20,12 +35,12 @@ body, html {
     margin: 4px 2px;
     cursor: pointer;
     width: 5%;
+    margin-bottom: 100px;
   }
   .buttonbackk {
    border-radius: 12px;
 }
 
-/* Add styles to the form container */
 .container {
   position: absolute;
   right: 0;
@@ -33,12 +48,11 @@ body, html {
   max-width: 400px;
   padding: 16px;
   background-color: white;
-  margin-right: 200px ;
-  margin-top: 170px;
+  margin-right: 180px ;
+  margin-top: 190px;
   border-radius: 2%;
 }
 
-/* Full-width input fields */
 input[type=text], input[type=password] {
   width: 100%;
   padding: 15px;
@@ -52,7 +66,6 @@ input[type=text]:focus, input[type=password]:focus {
   outline: none;
 }
 
-/* Set a style for the submit button */
 .btn {
   background-color: rgb(6, 6, 207);
   color: white;
@@ -62,33 +75,21 @@ input[type=text]:focus, input[type=password]:focus {
   width: 100%;
   opacity: 0.9;
 }
-.btnsign {
-  background-color: green;
-  color: white;
-  padding: 16px 22px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
 .btn:hover {
   opacity: 1;
 }
 
 hr {
-            border: 0; /* Menghapus border bawaan */
-            height: 2px; /* Mengatur tinggi garis */
-            background: #eeecec; /* Warna garis */
+            border: 0; 
+            height: 2px; 
+            background: #eeecec;
         }
 
     .columnh {
     float: left;
     width: 50%;
     padding: 10px;
-    height: 440px; 
-  
-    
+    height: 440px;     
   }
   .row:after {
     content: "";
@@ -102,8 +103,7 @@ hr {
 
 
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text], input[type=password]{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -112,7 +112,15 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-/* Set a style for all buttons */
+.textarea{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
 button {
   background-color: #04AA6D;
   color: white;
@@ -127,7 +135,6 @@ button:hover {
   opacity: 0.8;
 }
 
-/* Extra styles for the cancel button */
 .cancelbtnn {
   width: auto;
   padding: 10px 18px;
@@ -139,7 +146,6 @@ button:hover {
   background-color: #04AA6D;
 }
 
-/* Center the image and position the close button */
 .imgcontainer {
   text-align: center;
   margin: 24px 0 12px 0;
@@ -156,30 +162,29 @@ span.psw {
   padding-top: 16px;
 }
 
-/* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
   padding-top: 60px;
 }
 
-/* Modal Content/Box */
+
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 5% auto 15% auto; 
   border: 1px solid #888;
-  width: 40%; /* Could be more or less, depending on screen size */
+  width: 40%; 
 }
 
-/* The Close Button (x) */
+
 .close {
   position: absolute;
   right: 25px;
@@ -195,7 +200,6 @@ span.psw {
   cursor: pointer;
 }
 
-/* Add Zoom Animation */
 .animate {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s
@@ -211,7 +215,6 @@ span.psw {
   to {transform: scale(1)}
 }
 
-/* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
      display: block;
@@ -222,3 +225,23 @@ span.psw {
   }
 }
 
+
+
+
+.text-container h1 {
+  font-size: 3em;
+  background: linear-gradient(45deg, #1c5766, #357b8d, #4d664d,  #d1c0c0); 
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: textAnimation 5s infinite alternate;
+  margin-top: 30px;
+}
+
+@keyframes textAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
+}
