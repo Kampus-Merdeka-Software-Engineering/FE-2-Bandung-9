@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Harapan Polyclinic</title>
+    <link rel="icon" href="images/logohp.png" type="harapan-clinic-logo">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/appoinment.css">
+</head>
+<body>
+
+    <a href="dashboard.html"><button class="buttonbackk buttonbackkk">Back</button></a>
+    <div class="container">
+        <h1>Appointment</h1>
+        <p>Please fill in this form to making appoinment.</p>
+        <form id="appointmentForm">
+            <label for="title"><b>Title</b></label>
+            <select id="title" required>
+                <option></option>
+                <option value="Mr.">Mr.</option>
+                <option value="Mrs.">Mrs.</option>
+                <option value="Ms.">Ms.</option>
+            </select>
+
+            <label for="name"><b>Name</b></label>
+            <input type="text" id="name" placeholder="Enter Name" required>
+
+            <label for="birthPlace"><b>Birth Place</b></label>
+            <input type="text" id="birthPlace" placeholder="Enter Birth Place" required>
+
+            <label for="birthDate"><b>Birth Date</b></label>
+            <input type="date" id="birthDate" placeholder="Enter Birth Date" required>
+
+            <label for="gender"><b>Gender</b></label>
+            <select id="gender" required>
+                <option></option>
+                <option value="laki">Male</option>
+                <option value="perempuan">Female</option>
+            </select>
+
+            <label for="address"><b>Address</b></label>
+            <textarea id="address" placeholder="Enter Address" required></textarea>
+
+            <label for="phone"><b>Phone</b></label>
+            <input type="tel" id="phone" placeholder="Enter Phone" pattern="[0-9]{10,}" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="email" id="email" placeholder="Enter Email" required>
+
+            <label for="doctor"><b>Choose Doctor</b></label>
+            <select id="doctor" required>
+                <option></option>
+                <option value="dreng">Dr. Anggoro</option>
+                <option value="drvito">Dr. Vito</option>
+                <option value="drrizky">Drg. Rizky</option>
+                <option value="dramirul">Drg. Amirul</option>
+                <option value="drfira">Dr. Fira, Sp.JP</option>
+                <option value="drdayu">Dr. Dayu, Sp. A</option>
+                <option value="dredwina">Dr. Edwina, Sp. A</option>
+                <option value="dregia">Dr. Egia, Sp.M</option>
+            </select>
+
+            <label for="date"><b>Choose Date</b></label>
+            <input type="date" id="date" required>
+
+            <label for="time"><b>Choose Time</b></label>
+            <input type="time" id="time" required>
+
+            <button type="button" onclick="checkAvailability()">Check Availability</button>
+            <p id="availabilityMessage"></p>
+
+            <button type="submit">Request an Appointment</button>
+        </form>
+    </div>
+
+    <script src="js/appoinment.js"></script>
+</body>
+</html>
