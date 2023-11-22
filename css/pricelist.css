@@ -151,21 +151,35 @@ body {
 
 
 
+.topnav {
+  overflow: hidden;
+  background-color: #292f33;
+}
 
-.buttonback {
-    background-color: #1d498a; 
-    border: none;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    width: 5%;
-    margin-bottom: 100px;
-  }
-  .buttonbackk {
-   border-radius: 12px;
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  padding-bottom: 25px;
+}
+
+.topnav a.active {
+  background-color: #0b788b;
+  color: white;
+  padding-bottom: 25px;
+}
+.topnav a.logo {
+  height: 58px; 
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #f2f2f2;
 }

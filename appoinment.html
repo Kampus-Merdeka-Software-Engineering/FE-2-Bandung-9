@@ -9,7 +9,20 @@
 </head>
 <body>
 
-    <a href="dashboard.html"><button class="buttonbackk buttonbackkk">Back</button></a>
+      <div class="topnav">
+        <a href="#" class="logo">
+            <img src="images/logohp.png" alt="logo">
+        <a href="dashboard.html#home">Home</a>
+        <a href="dashboard.html#about">About Us</a>
+        <a href="dashboard.html#services">Services</a>
+        <a href="appoinment.html" class="active">Appointment</a>
+        <a href="dashboard.html#doctors">Doctors</a>
+        <a href="dashboard.html#gallery">Gallery</a>
+        <a href="pricelist.html">Price List</a>
+      </div>
+
+     <br><br><br><br>
+
     <div class="container">
         <h1>Appointment</h1>
         <p>Please fill in this form to making appoinment.</p>
@@ -25,9 +38,6 @@
             <label for="name"><b>Name</b></label>
             <input type="text" id="name" placeholder="Enter Name" required>
 
-            <label for="birthPlace"><b>Birth Place</b></label>
-            <input type="text" id="birthPlace" placeholder="Enter Birth Place" required>
-
             <label for="birthDate"><b>Birth Date</b></label>
             <input type="date" id="birthDate" placeholder="Enter Birth Date" required>
 
@@ -42,13 +52,13 @@
             <textarea id="address" placeholder="Enter Address" required></textarea>
 
             <label for="phone"><b>Phone</b></label>
-            <input type="tel" id="phone" placeholder="Enter Phone" pattern="[0-9]{10,}" required>
+            <input type="tel" id="phone" placeholder="08xxxxxxxxxx" pattern="[0-9]{10,}" required>
 
             <label for="email"><b>Email</b></label>
             <input type="email" id="email" placeholder="Enter Email" required>
 
             <label for="doctor"><b>Choose Doctor</b></label>
-            <select id="doctor" required>
+            <select id="doctor" onchange="updateTimeOptions()" required>    
                 <option></option>
                 <option value="dreng">Dr. Anggoro</option>
                 <option value="drvito">Dr. Vito</option>
@@ -61,13 +71,10 @@
             </select>
 
             <label for="date"><b>Choose Date</b></label>
-            <input type="date" id="date" required>
+            <input type="date" id="date" onchange="updateTimeOptions()" required>
 
             <label for="time"><b>Choose Time</b></label>
-            <input type="time" id="time" required>
-
-            <button type="button" onclick="checkAvailability()">Check Availability</button>
-            <p id="availabilityMessage"></p>
+            <select id="time" required></select>
 
             <button type="submit">Request an Appointment</button>
         </form>

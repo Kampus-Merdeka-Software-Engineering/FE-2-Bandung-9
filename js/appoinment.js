@@ -34,36 +34,41 @@ const doctorSchedules = {
     }
 };
 
-function checkAvailability() {
-    var selectedDoctor = document.getElementById('doctor').value;
-    var selectedDate = new Date(document.getElementById('date').value + 'T' + document.getElementById('time').value);
+function updateTimeOptions() {
+    const selectedDoctor = document.getElementById('doctor').value;
+    const selectedDate = new Date(document.getElementById('date').value);
+    const timeSelect = document.getElementById('time');
+
+    // Reset pilihan waktu
+    timeSelect.innerHTML = '';
 
     // Periksa apakah dokter bekerja pada hari yang dipilih
-    var doctorSchedule = doctorSchedules[selectedDoctor];
-    var isWorkingDay = doctorSchedule.workingDays.includes(selectedDate.getDay());
+    const doctorSchedule = doctorSchedules[selectedDoctor];
+    if (doctorSchedule && doctorSchedule.workingDays.includes(selectedDate.getDay())) {
+        const startHour = doctorSchedule.workingHours.start;
+        const endHour = doctorSchedule.workingHours.end;
 
-    // Periksa apakah dokter bekerja pada jam yang dipilih
-    var isWorkingHour = selectedDate.getHours() >= doctorSchedule.workingHours.start &&
-                        selectedDate.getHours() <= doctorSchedule.workingHours.end;
-
-    var isAvailable = isWorkingDay && isWorkingHour;
-
-    var availabilityMessage = document.getElementById('availabilityMessage');
-
-    if (isAvailable) {
-        availabilityMessage.style.color = 'green';
-        availabilityMessage.textContent = 'The doctor schedule is available on that date and time.'; 
+        // Tambahkan opsi waktu pada select
+        for (let hour = startHour; hour <= endHour; hour++) {
+            const option = document.createElement('option');
+            option.value = `${hour}:00`;
+            option.textContent = `${hour}:00`;
+            timeSelect.appendChild(option);
+        }
     } else {
-        availabilityMessage.style.color = 'red';
-        availabilityMessage.textContent = 'Sorry, the doctor is not working on that date or time.';
+        const option = document.createElement('option');
+        option.textContent = 'The doctor is not working today';
+        timeSelect.appendChild(option);
     }
 }
+
+// Panggil updateTimeOptions saat halaman dimuat untuk menetapkan jadwal awal
+document.addEventListener('DOMContentLoaded', updateTimeOptions);
 
 function submitForm() {
     // Ambil nilai dari setiap elemen formulir
     var title = document.getElementById('title').value;
     var name = document.getElementById('name').value;
-    var birthPlace = document.getElementById('birthPlace').value;
     var birthDate = document.getElementById('birthDate').value;
     var gender = document.getElementById('gender').value;
     var address = document.getElementById('address').value;
@@ -77,7 +82,6 @@ function submitForm() {
     console.log("Appointment");
     console.log("Title", title);
     console.log("Name", name);
-    console.log("Birth Place", birthPlace);
     console.log("Birth Date", birthDate);
     console.log("Gender", gender);
     console.log("Address", address);

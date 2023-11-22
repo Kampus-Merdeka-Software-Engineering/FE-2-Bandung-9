@@ -10,6 +10,7 @@ img {vertical-align: middle;}
   .topnav {
     overflow: hidden;
     background-color: #292f33;
+    width: 1300px;
   }
   
   .topnav a {
@@ -78,6 +79,7 @@ img {vertical-align: middle;}
     max-width: 1000px;
     position: relative;
     margin: auto;
+    margin-top: 0px;
   }
   
   .prev, .next {
@@ -246,6 +248,7 @@ img {vertical-align: middle;}
   overflow: hidden;
   position: relative;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .carousel-wrapper {
