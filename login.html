@@ -3,40 +3,45 @@
 <head>
   <title>Harapan Polyclinic</title>
   <link rel="icon" href="images/logohp.png" type="harapan-clinic-logo">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="css/login.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
 
-  <a href="dashboard.html"><button class="buttonback buttonbackk">Back</button></a>
+  <div class="topnav">
+    <a href="#" class="logo">
+        <img src="images/logohp.png" alt="logo">
+    <a href="dashboard.html" class="back">Back</a>
+  </div>
 
+ <br><br><br><br>
+
+<center>
+  <div class="text-container">
+    <h1>Maintain Your Health and Be Happy..</h1>
+  </div>
+</center>
 
   <div class="row">
     <div class="columnh">
-       <img src="images/logolog.png" width="94%" height="600px"  style="margin-left: 50px;">
+       <img src="images/logolog.png" width="97%" height="600px"  style="margin-left: 70px;">
     </div>
-  <div class="columnh">
-  <form action="/action_page.php" class="container">
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <div class="columnh">
+      <form class="container" action="http://localhost:3000/api/login" method="post">
+        <input type="text" placeholder="Enter Email" name="email" required>
+        <input type="password" placeholder="Enter Password" name="password" required>
+        <button type="submit" class="btn"> <b>Log in</b> </button>
+        <hr>
+      </form>
+    </div>
+  <p style="margin-left: 755px;"><b onclick="displayModal()" style="color: blue; cursor: pointer;">create a account</b> for take care of your health.</p>
+</div>  
 
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <button type="submit" class="btn"> <b>Log in</b> </button>
-    <hr>
-    <center>
-    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="btnsign">Sign up</button>
-  </center>
-  </form>
-  </div></div>  <br><br>
-  <p style="margin-left: 740px;"><b>create a account</b> for take care of your health.</p></body>
-
-
-
-
-<div id="id01" class="modal">
+<br><br>
   
-  <form class="modal-content animate" action="/action_page.php" method="post">
+<div id="id01" class="modal">
+  <form class="modal-content animate" action="http://localhost:3000/api/signup" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
@@ -45,14 +50,18 @@
       <h1>Sign Up</h1>
       <p>Please fill in this form to create an account.</p>
       <hr>
+
+      <label for="fullName"><b>Full Name</b></label>
+      <input type="text" placeholder="Enter Full Name"  name="fullname" required>
+
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
+
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="email" required>
 
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name="password" required>
     </div>
 
     <div class="containerr" style="background-color:#f1f1f1">
@@ -65,6 +74,7 @@
 
 <script src="js/login.js"></script>
   
-  
 </body>
 </html>
+
+
