@@ -13,6 +13,7 @@
     <a href="#" class="logo">
         <img src="images/logohp.png" alt="logo">
     <a href="dashboard.html" class="back">Back</a>
+    <a href="#" class="logout" style="display: none;">Logout</a>
   </div>
 
  <br><br><br><br>
@@ -29,8 +30,8 @@
     </div>
     <div class="columnh">
       <form class="container" action="http://localhost:3000/api/login" method="post">
-        <input type="text" placeholder="Enter Email" name="email" required>
-        <input type="password" placeholder="Enter Password" name="password" required>
+        <input type="text" placeholder="Enter Email" name="loginemail" id="loginemail" required>
+        <input type="password" placeholder="Enter Password" name="loginpassword" id="loginpassword" required>
         <button type="submit" class="btn"> <b>Log in</b> </button>
         <hr>
       </form>
@@ -51,17 +52,17 @@
       <p>Please fill in this form to create an account.</p>
       <hr>
 
-      <label for="fullName"><b>Full Name</b></label>
+      <label for="fullname"><b>Full Name</b></label>
       <input type="text" placeholder="Enter Full Name"  name="fullname" required>
 
-      <label for="uname"><b>Username</b></label>
+      <label for="username"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="username" required>
 
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
+      <input type="text" placeholder="Enter Email" name="signupemail" id = "signupemail"required>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password" required>
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="signuppassword" id = "signuppassword" required>
     </div>
 
     <div class="containerr" style="background-color:#f1f1f1">
@@ -71,6 +72,7 @@
     </div>
   </form>
 </div>
+
 
 <script src="js/login.js"></script>
   

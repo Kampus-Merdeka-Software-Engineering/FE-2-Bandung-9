@@ -1,3 +1,17 @@
+// Tambahkan pada appointment.html sebelum menampilkan konten appointment
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('http://localhost:3000/api/checkloginstatus')
+      .then(response => response.json())
+      .then(data => {
+        if (data.loggedIn !== true) {
+          window.location.href = 'login.html'; // Redirect ke halaman login jika tidak ada sesi login
+        }
+      })
+      .catch(error => {
+        console.error('Error checking login status:', error);
+      });
+  });
+
 const doctorSchedules = {
     dreng: {
         workingDays: [1, 3, 5], // Senin, Rabu, Jumat
@@ -93,50 +107,37 @@ function checkAvailability() {
     }
 }
 
+function checkFormValidity() {
+    const form = document.getElementById('appointmentForm');
+    if (form.checkValidity()) {
+        submitForm();
+    } else {
+        alert('Harap lengkapi semua bidang formulir dengan benar.');
+    }
+}
+
 function submitForm() {
-    console.log('Submitting form...');
-    // Ambil nilai dari setiap elemen formulir
-    var title = document.getElementById('title').value;
-    var name = document.getElementById('name').value;
-    var birthDate = document.getElementById('birthdate').value;
-    var gender = document.getElementById('gender').value;
-    var address = document.getElementById('address').value;
-    var phone = document.getElementById('phone').value;
-    var email = document.getElementById('email').value;
-    var selectedDoctor = document.getElementById('doctor').value;
-    var selectedDate = document.getElementById('date').value;
-    var selectedTime = document.getElementById('time').value;
+    const data = {
+        // Ambil nilai dari input form dengan benar
+        title: document.getElementById('title').value,
+        name: document.getElementById('name').value,
+        birthdate: document.getElementById('birthdate').value,
+        gender: document.getElementById('gender').value,
+        address: document.getElementById('address').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        doctor: document.getElementById('doctor').value,
+        date: document.getElementById('date').value,
+        time: document.getElementById('time').value,
+    };
 
-    //kirim server or tampilkan
-    console.log("Appointment");
-    console.log("Title", title);
-    console.log("Name", name);
-    console.log("Birth Date", birthDate);
-    console.log("Gender", gender);
-    console.log("Address", address);
-    console.log("Phone", phone);
-    console.log("Email", email);
-    console.log("Choose Doctor", selectedDoctor);
-    console.log("Choose Date", selectedDate);
-    console.log("Choose Time", selectedTime);
-
+    // Proses pengiriman data ke server
     fetch('http://localhost:3000/api/appointmentForm', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-            title: title,
-            name: name,
-            birthdate: birthDate,
-            gender: gender,
-            address: address,
-            phone: phone,
-            email: email,
-            doctor: selectedDoctor,
-            date: selectedDate,
-            time: selectedTime
-        }),
+        body: JSON.stringify(data)
     })
     .then(response => {
         if (!response.ok) {
@@ -145,14 +146,17 @@ function submitForm() {
         return response.json();
     })
     .then(data => {
-        // Handle response data here
-        console.log('Appointment created successfully:', data);
-        alert('Appointment created successfully!');
+        if (data.status === 'success') {
+            alert('Appointment created successfully!');
+        } else {
+            throw new error('Appointment failed'); // Alert jika appointment gagal
+        }
     })
     .catch(error => {
         console.error('There was a problem with the appointment request:', error.message);
+        if (error.response) {
+            console.log('Server error response:', error.response.data);
+        }
         alert('Failed to create appointment. Please try again.');
-        // Handle error message, display to user, etc.
     });
-    console.log('Form submitted!');
 }
