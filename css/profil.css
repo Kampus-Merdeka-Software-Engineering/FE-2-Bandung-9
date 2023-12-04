@@ -1,0 +1,68 @@
+body {
+    background-color: #394764;
+    font-family: Helvetica, sans-serif;
+}
+
+.profile-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    justify-content: center;
+}
+
+.profile-info {
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+p {
+    margin: 0;
+}
+
+
+
+
+.topnav {
+    overflow: hidden;
+    background-color: #292f33;
+    height: 58px;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+    padding-bottom: 25px;
+  }
+  
+  .topnav a.active {
+    background-color: #0b788b;
+    color: white;
+    padding-bottom: 25px;
+    margin-left: 15px;
+  }
+ .topnav a.logout {
+    float: right;
+}
+.topnav a.logo {
+    height: 58px; 
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #f2f2f2;
+}
