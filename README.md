@@ -38,4 +38,9 @@ Tampilan HARAPAN POLYCLINIC dibangun menggunakan berbagai macam teknologi daiant
 | Github             | Aplikasi / website yang digunakan untuk saling sharing dan upload code               | 
 
 ## Pembahasan Features Website
-
+![Alt Text](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_about%20us.jpg?raw=true)
+![Alt Text](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_pricelist.jpg?raw=true)
+![Alt Text](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_doctors.jpg?raw=true)
+![Alt Text](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_services.jpg?raw=true)
+![Alt Text](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_login.jpg?raw=true)
+![Alt Text](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_appoitment.jpg?raw=true)
