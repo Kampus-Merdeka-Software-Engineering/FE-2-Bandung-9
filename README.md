@@ -9,4 +9,4 @@ Kami sangat bersyukur dan bangga karena project akhir kami pada software enginee
 
 Dalam repository ini, membahas mengenai layanan informasi dan booking online HARAPAN POLYCLINIC melalui situs website yang kami kembangkan. 
 Kami telah menambahkan berbagai macam fitur pada website ini yang dapat dilihat pada navbar berikut :
-![Alt Text](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/Screenshot1.jpg?raw=true)https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/Screenshot1.jpg?raw=true)
+![Alt Text](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/Screenshot1.jpg?raw=true)
