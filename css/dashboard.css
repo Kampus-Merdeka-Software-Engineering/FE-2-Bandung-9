@@ -10,7 +10,7 @@ img {vertical-align: middle;}
   .topnav {
     overflow: hidden;
     background-color: #292f33;
-    width: 1300px;
+    padding: 6px 8px;
   }
   
   .topnav a {
@@ -32,6 +32,7 @@ img {vertical-align: middle;}
     background-color: #0b788b;
     color: white;
     padding-bottom: 25px;
+    margin-left: 15px;
   }
  .topnav a.login {
     float: right;
