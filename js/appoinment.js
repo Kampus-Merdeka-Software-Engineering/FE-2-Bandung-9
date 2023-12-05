@@ -1,47 +1,60 @@
-// Tambahkan pada appointment.html sebelum menampilkan konten appointment
-document.addEventListener('DOMContentLoaded', () => {
-    fetch('http://localhost:3000/api/checkloginstatus')
-      .then(response => response.json())
-      .then(data => {
-        if (data.loggedIn !== true) {
-          window.location.href = 'login.html'; // Redirect ke halaman login jika tidak ada sesi login
-        }
-      })
-      .catch(error => {
-        console.error('Error checking login status:', error);
-      });
+document.addEventListener('DOMContentLoaded', function() {
+    checkLoginStatus();
   });
+  
+  function checkLoginStatus() {
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (loggedInUser) {
+      // User sudah login, izinkan akses ke halaman appointment
+      window.location.href = 'appoinment.html';
+    } else {
+      // User belum login, biarkan mereka berada di halaman sebelumnya
+      redirectToLogin();
+    }
+  }
+  
+  function redirectToLogin() {
+    // Ambil URL halaman sebelumnya
+    const previousPage = document.referrer;
+    // Jika halaman sebelumnya bukan halaman login, kembalikan ke halaman sebelumnya
+    if (!previousPage.includes('login.html')) {
+      window.history.back();
+    } else {
+      // Jika halaman sebelumnya adalah halaman login, alihkan ke halaman dashboard
+      window.location.href = 'dashboard.html';
+    }
+  }
 
 const doctorSchedules = {
-    dreng: {
+    Dr_Anggoro: {
         workingDays: [1, 3, 5], // Senin, Rabu, Jumat
         workingHours: { start: 9, end: 14 } // 9 AM - 2 PM
     },
-    drvito: {
+    Dr_Vito: {
         workingDays: [2, 4, 6], // Selasa, Kamis, Sabtu
         workingHours: { start: 15, end: 20 } // 3 PM - 8 PM
     },
-    drrizky: {
+    Drg_Rizky: {
         workingDays: [1, 2, 3], // Senin, Selasa, Rabu
         workingHours: { start: 14, end: 18 } // 2 PM - 6 PM
     },
-    dramirul: {
+    Drg_amirul: {
         workingDays: [4, 5, 6], // Kamis, Jum'at, Sabtu
         workingHours: { start: 9, end: 12 } // 9 AM - 12 PM
     },
-    drfira: {
+    Dr_fira: {
         workingDays: [2, 4], // Selasa, Kamis
         workingHours: { start: 9, end: 13 } // 9 AM - 1 PM
     },
-    drdayu: {
+    Dr_dayu: {
         workingDays: [2, 4, 6], // Selasa, Kamis, Sabtu
         workingHours: { start: 9, end: 14 } // 9 AM -  2 PM
     },
-    dredwina: {
+    Dr_edwina: {
         workingDays: [1, 3, 5], // Senin, Rabu, Kamis
         workingHours: { start: 15, end: 20 } // 3 PM - 8 PM
     },
-    dregia: {
+    Dr_egia: {
         workingDays: [1, 2, 4, 6], // Senin, Selasa, Kamis, Sabtu
         workingHours: { start: 10, end: 15 } // 10 AM - 3 PM
     }
@@ -147,7 +160,7 @@ function submitForm() {
     })
     .then(data => {
         if (data.status === 'success') {
-            alert('Appointment created successfully!');
+            alert('Congratulations, your doctors appointment booking was successful! Please come at the appointed time.');
         } else {
             throw new error('Appointment failed'); // Alert jika appointment gagal
         }
