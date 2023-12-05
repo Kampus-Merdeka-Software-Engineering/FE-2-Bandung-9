@@ -1,25 +1,98 @@
-var modal = document.getElementById('id01');
+const modal = document.getElementById('id01');
 
-// Tambahkan fungsi displayModal()
 function displayModal() {
   if (modal) {
-    modal.style.display = "block";
+    modal.style.display = 'block';
   }
 }
 
-
-// Tambahkan pengecekan apakah modal ditemukan atau tidak sebelum menetapkan event onclick
 if (modal) {
   window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+    if (event.target === modal) {
+      modal.style.display = 'none';
     }
   };
 }
 
-// Menampilkan alert dan respons ketika signup
-// Event listener untuk tombol signup
-document.querySelector(".signupbtn").addEventListener("click", function(event) {
+
+function logout() {
+  try {
+    localStorage.removeItem('loggedInUser');
+    fetch('http://localhost:3000/api/logout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok.');
+      }
+      return response.json();
+    })
+    .then(data => {
+      if (data.status === 'success') {
+        alert('Logout successful!');
+        window.location.href = 'login.html';
+      } else {
+        alert('Logout failed.');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Logout failed. Please try again later.');
+    });
+  } catch (error) {
+    console.error('Error:', error);
+    alert('An error occurred during logout.');
+  }
+}
+
+document.querySelector('.logout').addEventListener('click', function(event) {
+  event.preventDefault();
+  logout();
+});
+
+// Pada fungsi checkLoginStatus()
+function checkLoginStatus() {
+  const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+  const logoutButton = document.querySelector('.logout');
+  if (loggedInUser && logoutButton) {
+    logoutButton.addEventListener('click', function(event) {
+      event.preventDefault();
+      logout();
+    });
+    showLoggedInContent();
+  } else {
+    showLoggedOutContent();
+  }
+}
+
+// Pada fungsi showLoggedInContent() dan showLoggedOutContent()
+function showLoggedInContent() {
+  const logoutButton = document.querySelector('.logout');
+  const loginButton = document.querySelector('.login'); // Tambahkan variabel untuk tombol login jika perlu
+  if (logoutButton) {
+    logoutButton.style.display = 'block';
+  }
+  if (loginButton) {
+    loginButton.style.display = 'none'; // Sembunyikan tombol login jika perlu
+  }
+}
+
+function showLoggedOutContent() {
+  const logoutButton = document.querySelector('.logout');
+  const loginButton = document.querySelector('.login'); // Tambahkan variabel untuk tombol login jika perlu
+  if (logoutButton) {
+    logoutButton.style.display = 'none'; // Sembunyikan tombol logout jika perlu
+  }
+  if (loginButton) {
+    loginButton.style.display = 'block';
+  }
+}
+
+
+document.querySelector('.signupbtn').addEventListener('click', function(event) {
   event.preventDefault();
 
   const fullname = document.querySelector('input[name="fullname"]').value;
@@ -55,8 +128,7 @@ document.querySelector(".signupbtn").addEventListener("click", function(event) {
   .then(data => {
     if (data.status === 'success') {
       alert('Signup successful!');
-      // Menampilkan respons yang terstruktur di halaman
-      var userInfo = document.createElement('div');
+      const userInfo = document.createElement('div');
       userInfo.innerHTML = `
         <p>Status: ${data.status}</p>
         <p>Message: ${data.message}</p>
@@ -67,7 +139,9 @@ document.querySelector(".signupbtn").addEventListener("click", function(event) {
           <li>Email: ${data.user.email}</li>
         </ul>
       `;
-      document.body.appendChild(userInfo); // Menambahkan informasi pengguna ke halaman
+      document.body.appendChild(userInfo);
+      localStorage.setItem('loggedInUser', JSON.stringify(data.user));
+      window.location.href = 'dashboard.html';
     } else {
       alert('Signup failed.');
     }
@@ -79,10 +153,7 @@ document.querySelector(".signupbtn").addEventListener("click", function(event) {
   });
 });
 
-
-
-// menampilkan alert dan respons ketika login
-document.querySelector(".btn").addEventListener("click", function(event) {
+document.querySelector('.btn').addEventListener('click', function(event) {
   event.preventDefault();
 
   const email = document.querySelector('input[name="loginemail"]').value;
@@ -100,9 +171,9 @@ document.querySelector(".btn").addEventListener("click", function(event) {
   fetch('http://localhost:3000/api/login', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json' // Tambahkan header untuk JSON
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify(data) // Ubah ke JSON sebelum mengirim
+    body: JSON.stringify(data)
   })
   .then(response => {
     if (!response.ok) {
@@ -113,13 +184,11 @@ document.querySelector(".btn").addEventListener("click", function(event) {
   .then(data => {
     if (data.status === 'success') {
       alert('Login successful!');
+      localStorage.setItem('loggedInUser', JSON.stringify(data.user));
+      showLoggedInContent();
+      window.location.href = 'dashboard.html'; 
 
-      const logoutButton = document.querySelector('.logout');
-    if (logoutButton) {
-      logoutButton.style.display = 'block';
-    }
-      // Menampilkan respons yang terstruktur di halaman
-      var userInfo = document.createElement('div');
+      const userInfo = document.createElement('div');
       userInfo.innerHTML = `
         <p>Status: ${data.status}</p>
         <p>Message: ${data.message}</p>
@@ -130,7 +199,7 @@ document.querySelector(".btn").addEventListener("click", function(event) {
           <li>Email: ${data.user.email}</li>
         </ul>
       `;
-      document.body.appendChild(userInfo); // Menambahkan informasi pengguna ke halaman
+      document.body.appendChild(userInfo);
     } else {
       alert('Login failed. Invalid email or password.');
     }
@@ -141,41 +210,3 @@ document.querySelector(".btn").addEventListener("click", function(event) {
     alert('Login failed. Please try again later.');
   });
 });
-
-
-// Fungsi logout
-// Menambahkan event listener untuk tombol logout
-document.querySelector(".logout").addEventListener("click", function(event) {
-  event.preventDefault();
-  logout();
-});
-function logout() {
-  fetch('http://localhost:3000/api/logout', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok.');
-    }
-    return response.json();
-  })
-  .then(data => {
-    if (data.status === 'success') {
-      alert('Logout successful!');
-      // Hapus informasi yang tersimpan (Contoh: data pengguna)
-      localStorage.removeItem('userData'); // Hapus data pengguna dari localStorage
-
-      // Redirect ke halaman login
-      window.location.href = 'login.html';
-    } else {
-      alert('Logout failed.');
-    }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    alert('Logout failed. Please try again later.');
-  });
-}
