@@ -37,21 +37,49 @@ Tampilan HARAPAN POLYCLINIC dibangun menggunakan berbagai macam teknologi daiant
 | API                | Integrasi API data untuk menyediakan konten berkualitas kepada pengguna               |
 | Github             | Aplikasi / website yang digunakan untuk saling sharing dan upload code               | 
 
-## Pembahasan Features Website
-![About Us](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_about%20us.jpg?raw=true)
-*Deskripsi: Ini adalah halaman "About Us" yang memperkenalkan tim kami.*
+## Pembahasan Features Utama Websit
+Deskripsi dibawah Ini adalah halaman "About Us" menjadi halaman utama dan sekaligus yang memperkenalkan HARAPAN POLYCLINIC adapun berikisikan informasi tentang Harapan Polyclinic beserta visi dan misinya.
 
-![Alt Text](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_pricelist.jpg?raw=true)
-Ini bahas pricelist
+<img src="https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_about%20us.jpg?raw=true" alt="About Us" width="700"/>
 
-![Alt Text](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_doctors.jpg?raw=true)
-Ini bahas doctors
+Halaman dibawah merupakan halaman Pricelist dimana terdiri dari halaman daftar harga, dan User dapat melihat kisaran harga check up pada HARAPAN POLYCLINIC
 
-![Alt Text](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_services.jpg?raw=true)
-Ini bahas services
+<img src="https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_pricelist.jpg?raw=true" alt="Price List" width="700"/>
 
-![Alt Text](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_login.jpg?raw=true)
-Ini bahas login
+Halaman dibawah  merupakan halaman  login  dimana user dapat membuat akun dan mengirimkan informasi data dirinya kepada website kami agar dapat melakukan proses pemesanan atau booking pada halaman appoitment pada website kami.
 
-![Alt Text](https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_appoitment.jpg?raw=true)
-Ini bahas appoitment
+<img src="https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_login.jpg?raw=true" alt="Login" width="700"/>
+
+Halaman dibawah merupakan halaman appoitment dimana user dapat melakukan booking / pemesanan layanan HARAPAN POLYCLINIC, ketika sudah mengisi keseluruhan data pribadi dan menginginkan apa yang ingin dituju untuk keperluan kesehatannya serta mengecheck bahwa dokter tersebut sedang bekerja atau tidak, apabila semua accept maka booking anda akan succes.
+
+<img src="https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_appoitment.jpg?raw=true" alt="Appointment" width="700"/>
+
+## Team 9 Section Bandung
+**HARAPAN POLYCLINIC** adalah project akhir dari sofware engineer yang telah dibangun dan diselesaikan oleh _group 9 Section Bandung KM AUG23_, MSIB (RevoU x MSIB Kemndikbudristek).
+Dimana perancangan dan pengembangan website ini dikembangkan oleh :
+
+|  Nama      | Role | 
+|----------|----------|
+| Vincentius Vito Valentino   | Project Leader  | 
+| Fira Hanasti          | Frontend Development | 
+| Edwina Jerusalem | Frontend Development  |
+| Mochamad Rizky   | Backend Development |
+| Ida Ayu Agung Dyah  | Backend Development |
+| Amirul Akbar   | Quality Assurance   |
+| Egia Ninta Ginting  |  Quality Assurance |
+
+## Contact Us
+
+Jika Anda memiliki pertanyaan lebih lanjut atau membutuhkan bantuan, jangan ragu untuk menghubungi kami:
+
+- Email: harapanpolyclinic@gmail.com
+- Phone: +62 123 456 789
+- Loc: 123 Main Street, Jakarta, 78901, Indonesia.
+
+## Terima Kasih
+
+Kami mengucapkan terima kasih atas kunjungan Anda ke repository kami. Semoga website Harapan Polyclinic ini bermanfaat bagi Anda dan memberikan kemudahan dalam mendapatkan layanan kesehatan.
+
+Dengan rasa hormat,
+
+Tim Harapan Polyclinic _Group 9 - Section Bandung_
