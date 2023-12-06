@@ -3,9 +3,9 @@
 <head>
   <title>Harapan Polyclinic</title>
   <link rel="icon" href="images/logohp.png" type="harapan-clinic-logo">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="css/login.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
 
@@ -27,11 +27,9 @@
        <img src="images/logolog.png" width="97%" height="600px"  style="margin-left: 70px;">
     </div>
   <div class="columnh">
-  <form action="/action_page.php" class="container">
-    <input type="text" placeholder="Enter Email" name="email" required>
-
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
+  <form action=action="http://localhost:3000/api/login" method="post" class="container">
+    <input type="text" placeholder="Enter Email" name="loginemail" required>
+    <input type="password" placeholder="Enter Password" name="loginpassword" required>
     <button type="submit" class="btn"> <b>Log in</b> </button>
     <hr>
     <p class="cc"><b onclick="document.getElementById('id01').style.display='block'" style="color: blue; cursor: pointer;">create a account</b> for take care of your health.</p>
@@ -44,8 +42,7 @@
 
 
 <div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php" method="post">
+  <form class="modal-content animate" action="http://localhost:3000/api/signup" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
@@ -57,15 +54,12 @@
 
       <label for="fullName"><b>Full Name</b></label>
       <input type="text" placeholder="Enter Full Name"  name="fullName" required>
-
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
+      <input type="text" placeholder="Enter Username" name="username" required>
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-
+      <input type="text" placeholder="Enter Email" name="signupemail" required>
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name="signuppassword" required>
     </div>
 
     <div class="containerr" style="background-color:#f1f1f1">
