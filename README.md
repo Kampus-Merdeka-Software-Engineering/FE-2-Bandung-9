@@ -78,7 +78,7 @@ Jika Anda memiliki pertanyaan lebih lanjut atau membutuhkan bantuan, jangan ragu
 
 ## Terima Kasih
 
-Kami mengucapkan terima kasih atas kunjungan Anda ke repository kami. Semoga website Harapan Polyclinic Semoga dapat bermanfaat bagi Anda dan memberikan kemudahan dalam mendapatkan layanan kesehatan.
+Kami mengucapkan terima kasih atas kunjungan Anda ke repository kami. Semoga website Harapan Polyclinic dapat bermanfaat bagi Anda dan memberikan kemudahan dalam mendapatkan layanan kesehatan.
 
 Dengan rasa hormat,
 
