@@ -3,9 +3,9 @@
 <head>
     <title>Harapan Polyclinic</title>
     <link rel="icon" href="images/logohp.png" type="harapan-clinic-logo">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="css/appoinment.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/appoinment.css">
 </head>
 <body>
 
@@ -27,9 +27,9 @@
     <div class="container">
         <h1>Appointment</h1>
         <p>Please fill in this form to making appoinment.</p>
-        <form id="appointmentForm">
+        <form id="appointmentForm" action="http://localhost:3000/api/appointmentForm" method="post" onsubmit="event.preventDefault(); checkAvailability()>
             <label for="title"><b>Title</b></label>
-            <select id="title" required>
+            <select id="title" name="title" required>
                 <option></option>
                 <option value="Mr.">Mr.</option>
                 <option value="Mrs.">Mrs.</option>
@@ -37,45 +37,45 @@
             </select>
 
             <label for="name"><b>Name</b></label>
-            <input type="text" id="name" placeholder="Enter Name" required>
+            <input type="text" id="name" name="name" placeholder="Enter Name" required>
 
             <label for="birthDate"><b>Birth Date</b></label>
-            <input type="date" id="birthDate" placeholder="Enter Birth Date" required>
+            <input type="date" id="birthDate" name="birthdate" placeholder="Enter Birth Date" required>
 
             <label for="gender"><b>Gender</b></label>
-            <select id="gender" required>
+            <select id="gender" name="gender" required>
                 <option></option>
                 <option value="laki">Male</option>
                 <option value="perempuan">Female</option>
             </select>
 
             <label for="address"><b>Address</b></label>
-            <textarea id="address" placeholder="Enter Address" required></textarea>
+            <textarea id="address" name="address" placeholder="Enter Address" required></textarea>
 
             <label for="phone"><b>Phone</b></label>
-            <input type="tel" id="phone" placeholder="08xxxxxxxxxx" pattern="[0-9]{10,}" required>
+            <input type="tel" id="phone" name="phone" placeholder="08xxxxxxxxxx" pattern="[0-9]{10,}" required>
 
             <label for="email"><b>Email</b></label>
-            <input type="email" id="email" placeholder="Enter Email" required>
+            <input type="email" id="email" name="email" placeholder="Enter Email" required>
 
             <label for="doctor"><b>Choose Doctor</b></label>
-            <select id="doctor" onchange="updateTimeOptions()" required>    
+            <select id="doctor" name="doctor" onchange="updateTimeOptions()" required>    
                 <option></option>
-                <option value="dreng">Dr. Anggoro</option>
-                <option value="drvito">Dr. Vito</option>
-                <option value="drrizky">Drg. Rizky</option>
-                <option value="dramirul">Drg. Amirul</option>
-                <option value="drfira">Dr. Fira, Sp.JP</option>
-                <option value="drdayu">Dr. Dayu, Sp. A</option>
-                <option value="dredwina">Dr. Edwina, Sp. A</option>
-                <option value="dregia">Dr. Egia, Sp.M</option>
+                <option value="Dr_Anggoro">Dr. Anggoro</option>
+                <option value="Dr_Vito">Dr. Vito</option>
+                <option value="Drg_Rizky">Drg. Rizky</option>
+                <option value="Drg_amirul">Drg. Amirul</option>
+                <option value="Dr_fira">Dr. Fira, Sp.JP</option>
+                <option value="Dr_dayu">Dr. Dayu, Sp. A</option>
+                <option value="Dr_edwina">Dr. Edwina, Sp. A</option>
+                <option value="Dr_egia">Dr. Egia, Sp.M</option>
             </select>
 
             <label for="date"><b>Choose Date</b></label>
-            <input type="date" id="date" onchange="updateTimeOptions()" required>
+            <input type="date" id="date" name="date" onchange="updateTimeOptions()" required>
 
             <label for="time"><b>Choose Time</b></label>
-            <select id="time" required></select>
+            <select id="time" name="time" required></select>
 
             <button type="submit" class="ra">Request an Appointment</button>
         </form>
