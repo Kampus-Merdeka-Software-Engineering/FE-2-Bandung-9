@@ -1,38 +1,64 @@
-// Data jadwal dokter
+document.addEventListener('DOMContentLoaded', function() {
+    checkLoginStatus();
+  });
+  
+  function checkLoginStatus() {
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (loggedInUser) {
+      // User sudah login, izinkan akses ke halaman appointment
+      window.location.href = 'appoinment.html';
+    } else {
+      // User belum login, biarkan mereka berada di halaman sebelumnya
+      redirectToLogin();
+    }
+  }
+  
+  function redirectToLogin() {
+    // Ambil URL halaman sebelumnya
+    const previousPage = document.referrer;
+    // Jika halaman sebelumnya bukan halaman login, kembalikan ke halaman sebelumnya
+    if (!previousPage.includes('login.html')) {
+      window.history.back();
+    } else {
+      // Jika halaman sebelumnya adalah halaman login, alihkan ke halaman dashboard
+      window.location.href = 'dashboard.html';
+    }
+  }
+
 const doctorSchedules = {
-    dreng: {
+    Dr_Anggoro: {
         workingDays: [1, 3, 5], // Senin, Rabu, Jumat
         workingHours: { start: 9, end: 14 } // 9 AM - 2 PM
     },
-    drvito: {
+    Dr_Vito: {
         workingDays: [2, 4, 6], // Selasa, Kamis, Sabtu
         workingHours: { start: 15, end: 20 } // 3 PM - 8 PM
     },
-    drrizky: {
+    Drg_Rizky: {
         workingDays: [1, 2, 3], // Senin, Selasa, Rabu
         workingHours: { start: 14, end: 18 } // 2 PM - 6 PM
     },
-    dramirul: {
+    Drg_amirul: {
         workingDays: [4, 5, 6], // Kamis, Jum'at, Sabtu
         workingHours: { start: 9, end: 12 } // 9 AM - 12 PM
     },
-    drfira: {
+    Dr_fira: {
         workingDays: [2, 4], // Selasa, Kamis
         workingHours: { start: 9, end: 13 } // 9 AM - 1 PM
     },
-    drdayu: {
+    Dr_dayu: {
         workingDays: [2, 4, 6], // Selasa, Kamis, Sabtu
         workingHours: { start: 9, end: 14 } // 9 AM -  2 PM
     },
-    dredwina: {
+    Dr_edwina: {
         workingDays: [1, 3, 5], // Senin, Rabu, Kamis
         workingHours: { start: 15, end: 20 } // 3 PM - 8 PM
     },
-    dregia: {
+    Dr_egia: {
         workingDays: [1, 2, 4, 6], // Senin, Selasa, Kamis, Sabtu
         workingHours: { start: 10, end: 15 } // 10 AM - 3 PM
     }
-};
+}
 
 function updateTimeOptions() {
     const selectedDoctor = document.getElementById('doctor').value;
@@ -65,36 +91,85 @@ function updateTimeOptions() {
 // Panggil updateTimeOptions saat halaman dimuat untuk menetapkan jadwal awal
 document.addEventListener('DOMContentLoaded', updateTimeOptions);
 
-function submitForm() {
-    // Ambil nilai dari setiap elemen formulir
-    var title = document.getElementById('title').value;
-    var name = document.getElementById('name').value;
-    var birthDate = document.getElementById('birthDate').value;
-    var gender = document.getElementById('gender').value;
-    var address = document.getElementById('address').value;
-    var phone = document.getElementById('phone').value;
-    var email = document.getElementById('email').value;
-    var selectedDoctor = document.getElementById('doctor').value;
-    var selectedDate = document.getElementById('date').value;
-    var selectedTime = document.getElementById('time').value;
+function checkAvailability() {
+    const selectedDoctor = document.getElementById('doctor').value;
+    const selectedDate = new Date(document.getElementById('date').value);
+    const selectedTime = document.getElementById('time').value;
 
-    //kirim server or tampilkan
-    console.log("Appointment");
-    console.log("Title", title);
-    console.log("Name", name);
-    console.log("Birth Date", birthDate);
-    console.log("Gender", gender);
-    console.log("Address", address);
-    console.log("Phone", phone);
-    console.log("Emai", email);
-    console.log("Choose Doctor", selectedDoctor);
-    console.log("Choose Date", selectedDate);
-    console.log("Choose Time", selectedTime);
+    const doctorSchedule = doctorSchedules[selectedDoctor];
+
+    if (
+        doctorSchedule &&
+        doctorSchedule.workingDays.includes(selectedDate.getDay())
+    ) {
+        const startHour = doctorSchedule.workingHours.start;
+        const endHour = doctorSchedule.workingHours.end;
+        const selectedHour = parseInt(selectedTime.split(':')[0], 10);
+
+        if (selectedHour >= startHour && selectedHour <= endHour) {
+            console.log('Doctor is available at the selected time.');
+            // Lakukan proses pengiriman formulir di sini
+            submitForm();
+        } else {
+            console.log('Doctor is not available at the selected time.');
+            // Tampilkan pesan bahwa dokter tidak tersedia pada waktu tersebut
+        }
+    } else {
+        console.log('Doctor is not working on the selected date.');
+        // Tampilkan pesan bahwa dokter tidak bekerja pada tanggal tersebut
+    }
 }
 
-// submit form
-document.getElementById('appointmentForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Mencegah pengiriman form standar
-    checkAvailability(); // Panggil fungsi checkAvailability
-    submitForm(); // Panggil fungsi submitForm
-});
+function checkFormValidity() {
+    const form = document.getElementById('appointmentForm');
+    if (form.checkValidity()) {
+        submitForm();
+    } else {
+        alert('Harap lengkapi semua bidang formulir dengan benar.');
+    }
+}
+
+function submitForm() {
+    const data = {
+        // Ambil nilai dari input form dengan benar
+        title: document.getElementById('title').value,
+        name: document.getElementById('name').value,
+        birthdate: document.getElementById('birthdate').value,
+        gender: document.getElementById('gender').value,
+        address: document.getElementById('address').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        doctor: document.getElementById('doctor').value,
+        date: document.getElementById('date').value,
+        time: document.getElementById('time').value,
+    };
+
+    // Proses pengiriman data ke server
+    fetch('http://localhost:3000/api/appointmentForm', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.status === 'success') {
+            alert('Congratulations, your doctors appointment booking was successful! Please come at the appointed time.');
+        } else {
+            throw new error('Appointment failed'); // Alert jika appointment gagal
+        }
+    })
+    .catch(error => {
+        console.error('There was a problem with the appointment request:', error.message);
+        if (error.response) {
+            console.log('Server error response:', error.response.data);
+        }
+        alert('Failed to create appointment. Please try again.');
+    });
+}
