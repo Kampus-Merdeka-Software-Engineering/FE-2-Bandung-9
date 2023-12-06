@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!previousPage.includes('login.html')) {
       window.history.back();
     } else {
-      // Jika halaman sebelumnya adalah halaman login, alihkan ke halaman dashboard
-      window.location.href = 'dashboard.html';
+      // Jika halaman sebelumnya adalah halaman login, alihkan ke halaman index
+      window.location.href = 'index.html';
     }
   }
 
