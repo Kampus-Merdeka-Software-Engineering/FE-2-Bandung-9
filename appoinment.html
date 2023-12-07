@@ -9,7 +9,7 @@
 </head>
 <body>
 
-      <div class="topnav">
+    <div class="topnav">
         <a href="#" class="logo">
             <img src="images/logohp.png" alt="logo">
         <a href="index.html#home">Home</a>
@@ -20,14 +20,14 @@
         <a href="index.html#gallery">Gallery</a>
         <a href="pricelist.html">Price List</a>
         <a href="profil.html">Profile</a>
-      </div>
+    </div>
 
-     <br><br><br><br>
+    <br><br><br><br>
 
     <div class="container">
         <h1>Appointment</h1>
         <p>Please fill in this form to making appoinment.</p>
-        <form id="appointmentForm" action="http://localhost:3000/api/appointmentForm" method="post" onsubmit="event.preventDefault(); checkAvailability()>
+        <form id="appointmentForm" action="http://localhost:3000/api/appointmentForm" method="post" onsubmit="event.preventDefault(); checkAvailability();">
             <label for="title"><b>Title</b></label>
             <select id="title" name="title" required>
                 <option></option>
@@ -40,7 +40,7 @@
             <input type="text" id="name" name="name" placeholder="Enter Name" required>
 
             <label for="birthDate"><b>Birth Date</b></label>
-            <input type="date" id="birthDate" name="birthdate" placeholder="Enter Birth Date" required>
+            <input type="date" id="birthdate" name="birthdate" placeholder="Enter Birth Date" required>
 
             <label for="gender"><b>Gender</b></label>
             <select id="gender" name="gender" required>
@@ -77,7 +77,7 @@
             <label for="time"><b>Choose Time</b></label>
             <select id="time" name="time" required></select>
 
-            <button type="submit" class="ra">Request an Appointment</button>
+            <button type="submit" class="ra" >Request an Appointment</button>
         </form>
     </div>
 
