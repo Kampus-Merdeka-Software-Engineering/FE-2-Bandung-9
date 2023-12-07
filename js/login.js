@@ -94,7 +94,7 @@ function showLoggedOutContent() {
 }
 
 
-function signUp() {
+function signup() {
   const fullname = document.querySelector('input[name="fullname"]').value;
   const username = document.querySelector('input[name="username"]').value;
   const email = document.querySelector('input[name="signupemail"]').value;
@@ -153,7 +153,7 @@ function signUp() {
   });
 }
 
-function logIn() {
+function login() {
   const email = document.querySelector('input[name="loginemail"]').value;
   const password = document.querySelector('input[name="loginpassword"]').value;
 
@@ -212,10 +212,10 @@ function logIn() {
 
 document.querySelector('.signup').addEventListener('click', function(event) {
   event.preventDefault();
-  signUp();
+  signup();
 });
 
 document.querySelector('.btn').addEventListener('click', function(event) {
   event.preventDefault();
-  logIn();
+  login();
 });
