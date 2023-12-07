@@ -129,23 +129,26 @@ function checkFormValidity() {
     }
 }
 
+
+
 function submitForm() {
+    const time = document.getElementById('time').value;
+    const formattedTime = new Date().toISOString().substr(0, 11) + time + ":00.000Z";
+    
     const data = {
-        // Ambil nilai dari input form dengan benar
         title: document.getElementById('title').value,
         name: document.getElementById('name').value,
-        birthdate: document.getElementById('birthdate').value,
+        birthdate: new Date(document.getElementById('birthdate').value).toISOString(),
         gender: document.getElementById('gender').value,
         address: document.getElementById('address').value,
         phone: document.getElementById('phone').value,
         email: document.getElementById('email').value,
         doctor: document.getElementById('doctor').value,
-        date: document.getElementById('date').value,
-        time: document.getElementById('time').value,
+        date:  new Date(document.getElementById('date').value).toISOString(),
+        time: formattedTime
     };
 
-    // Proses pengiriman data ke server
-    fetch('http://localhost:3000/api/appointmentForm', {
+    fetch('http://localhost:3000/api/appointment', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -160,16 +163,13 @@ function submitForm() {
     })
     .then(data => {
         if (data.status === 'success') {
-            alert('Congratulations, your doctors appointment booking was successful! Please come at the appointed time.');
+            alert('Congratulations, your doctor\'s appointment booking was successful! Please come at the appointed time.');
         } else {
-            throw new error('Appointment failed'); // Alert jika appointment gagal
+            throw new Error('Appointment failed');
         }
     })
     .catch(error => {
         console.error('There was a problem with the appointment request:', error.message);
-        if (error.response) {
-            console.log('Server error response:', error.response.data);
-        }
-        alert('Failed to create appointment. Please try again.');
+        alert('Failed to create an appointment. Please try again.');
     });
 }
