@@ -1,5 +1,4 @@
 // Ambil data dari localStorage saat halaman dimuat
-// Ambil data dari localStorage saat halaman dimuat
 document.addEventListener('DOMContentLoaded', function() {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 

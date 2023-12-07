@@ -132,14 +132,8 @@ function checkFormValidity() {
 
 
 function submitForm() {
-    // const selectedDate = new Date(document.getElementById('date').value);
-    // const year = selectedDate.getFullYear();
-    // const month = `${selectedDate.getMonth() + 1}`.padStart(2, '0');
-    // const day = `${selectedDate.getDate()}`.padStart(2, '0');
-    // const formattedDate = `${year}-${month}-${day}`;
-
     const time = document.getElementById('time').value;
-const formattedTime = new Date().toISOString().substr(0, 11) + time + ":00.000Z";
+    const formattedTime = new Date().toISOString().substr(0, 11) + time + ":00.000Z";
     
     const data = {
         title: document.getElementById('title').value,
