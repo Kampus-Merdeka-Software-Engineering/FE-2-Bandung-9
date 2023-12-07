@@ -94,7 +94,7 @@ function showLoggedOutContent() {
 }
 
 
-document.querySelector('.signupbtn').addEventListener('click', function(event) {
+document.querySelector('.signup').addEventListener('click', function(event) {
   event.preventDefault();
 
   const fullname = document.querySelector('input[name="fullname"]').value;
