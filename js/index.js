@@ -1,3 +1,6 @@
+const DATABASE_URL = "https://lively-necklace-crab.cyclic.app";
+
+
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -59,7 +62,7 @@ function prevSlide() {
 function logout() {
   try {
     localStorage.removeItem('loggedInUser');
-    fetch('http://localhost:3000/api/logout', {
+    fetch(`${DATABASE_URL}/logout`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -107,20 +110,20 @@ function checkLoginStatus() {
 // Pada fungsi showLoggedInContent() dan showLoggedOutContent()
 function showLoggedInContent() {
   const logoutButton = document.querySelector('.logout');
-  const loginButton = document.querySelector('.login'); 
+  const loginButton = document.querySelector('.login'); // Tambahkan variabel untuk tombol login jika perlu
   if (logoutButton) {
     logoutButton.style.display = 'block';
   }
   if (loginButton) {
-    loginButton.style.display = 'none'; 
+    loginButton.style.display = 'none'; // Sembunyikan tombol login jika perlu
   }
 }
 
 function showLoggedOutContent() {
   const logoutButton = document.querySelector('.logout');
-  const loginButton = document.querySelector('.login'); 
+  const loginButton = document.querySelector('.login'); // Tambahkan variabel untuk tombol login jika perlu
   if (logoutButton) {
-    logoutButton.style.display = 'none'; 
+    logoutButton.style.display = 'none'; // Sembunyikan tombol logout jika perlu
   }
   if (loginButton) {
     loginButton.style.display = 'block';

@@ -1,4 +1,6 @@
 // Ambil data dari localStorage saat halaman dimuat
+const DATABASE_URL = "https://lively-necklace-crab.cyclic.app";
+
 document.addEventListener('DOMContentLoaded', function() {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
@@ -15,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault(); // Hindari pengiriman default dari link
 
             // Lakukan permintaan logout ke server
-            fetch('http://localhost:3000/api/logout', {
+            fetch(`${DATABASE_URL}/logout`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

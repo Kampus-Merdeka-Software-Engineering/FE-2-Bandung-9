@@ -1,3 +1,4 @@
+const DATABASE_URL = "https://lively-necklace-crab.cyclic.app";
 document.addEventListener('DOMContentLoaded', function() {
     checkLoginStatus();
   });
@@ -20,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!previousPage.includes('login.html')) {
       window.history.back();
     } else {
-      // Jika halaman sebelumnya adalah halaman login, alihkan ke halaman index
-      window.location.href = 'index.html';
+      // Jika halaman sebelumnya adalah halaman login, alihkan ke halaman dashboard
+      window.location.href = 'dashboard.html';
     }
   }
 
@@ -148,7 +149,7 @@ function submitForm() {
         time: formattedTime
     };
 
-    fetch('http://localhost:3000/api/appointment', {
+    fetch(`${DATABASE_URL}/appointment`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
