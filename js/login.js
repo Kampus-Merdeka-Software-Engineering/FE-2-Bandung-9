@@ -94,9 +94,7 @@ function showLoggedOutContent() {
 }
 
 
-document.querySelector('.signup').addEventListener('click', function(event) {
-  event.preventDefault();
-
+function signUp() {
   const fullname = document.querySelector('input[name="fullname"]').value;
   const username = document.querySelector('input[name="username"]').value;
   const email = document.querySelector('input[name="signupemail"]').value;
@@ -153,11 +151,9 @@ document.querySelector('.signup').addEventListener('click', function(event) {
     console.error('Error:', error);
     alert('Signup failed. Please try again later.');
   });
-});
+}
 
-document.querySelector('.btn').addEventListener('click', function(event) {
-  event.preventDefault();
-
+function logIn() {
   const email = document.querySelector('input[name="loginemail"]').value;
   const password = document.querySelector('input[name="loginpassword"]').value;
 
@@ -165,11 +161,12 @@ document.querySelector('.btn').addEventListener('click', function(event) {
     alert('Email dan password harus diisi.');
     return;
   }
+
   const data = {
     email: email,
     password: password
   };  
-  
+
   fetch(`${DATABASE_URL}/login`, {
     method: 'POST',
     headers: {
@@ -211,4 +208,14 @@ document.querySelector('.btn').addEventListener('click', function(event) {
     console.error('Error:', error);
     alert('Login failed. Please try again later.');
   });
+}
+
+document.querySelector('.signup').addEventListener('click', function(event) {
+  event.preventDefault();
+  signUp();
+});
+
+document.querySelector('.btn').addEventListener('click', function(event) {
+  event.preventDefault();
+  logIn();
 });
