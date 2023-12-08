@@ -1,6 +1,3 @@
-const DATABASE_URL = "postgresql://postgres:bD4-ba2BA4EF1CG1e25adBdE3D2gCg*E@roundhouse.proxy.rlwy.net:34839/railway";
-
-
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -62,7 +59,7 @@ function prevSlide() {
 function logout() {
   try {
     localStorage.removeItem('loggedInUser');
-    fetch(`${DATABASE_URL}/logout`, {
+    fetch('/api/logout', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

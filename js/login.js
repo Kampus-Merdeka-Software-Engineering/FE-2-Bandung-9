@@ -1,5 +1,3 @@
-const DATABASE_URL = "postgresql://postgres:bD4-ba2BA4EF1CG1e25adBdE3D2gCg*E@roundhouse.proxy.rlwy.net:34839/railway";
-
 const modal = document.getElementById('id01');
 
 function displayModal() {
@@ -20,7 +18,7 @@ if (modal) {
 function logout() {
   try {
     localStorage.removeItem('loggedInUser');
-    fetch(`${DATABASE_URL}/logout`, {
+    fetch('/api/logout', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -94,7 +92,9 @@ function showLoggedOutContent() {
 }
 
 
-function signup() {
+document.querySelector('.signupbtn').addEventListener('click', function(event) {
+  event.preventDefault();
+
   const fullname = document.querySelector('input[name="fullname"]').value;
   const username = document.querySelector('input[name="username"]').value;
   const email = document.querySelector('input[name="signupemail"]').value;
@@ -112,7 +112,7 @@ function signup() {
     password: password
   };
 
-  fetch(`${DATABASE_URL}/signup`, {
+  fetch('/signup', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -141,7 +141,7 @@ function signup() {
       `;
       document.body.appendChild(userInfo);
       localStorage.setItem('loggedInUser', JSON.stringify(data.user));
-      window.location.href = 'index.html';
+      window.location.href = 'dashboard.html';
     } else {
       alert('Signup failed.');
     }
@@ -151,9 +151,11 @@ function signup() {
     console.error('Error:', error);
     alert('Signup failed. Please try again later.');
   });
-}
+});
 
-function login() {
+document.querySelector('.btn').addEventListener('click', function(event) {
+  event.preventDefault();
+
   const email = document.querySelector('input[name="loginemail"]').value;
   const password = document.querySelector('input[name="loginpassword"]').value;
 
@@ -161,13 +163,12 @@ function login() {
     alert('Email dan password harus diisi.');
     return;
   }
-
   const data = {
     email: email,
     password: password
   };  
-
-  fetch(`${DATABASE_URL}/login`, {
+  
+  fetch('/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -185,7 +186,7 @@ function login() {
       alert('Login successful!');
       localStorage.setItem('loggedInUser', JSON.stringify(data.user));
       showLoggedInContent();
-      window.location.href = 'index.html'; 
+      window.location.href = 'dashboard.html'; 
 
       const userInfo = document.createElement('div');
       userInfo.innerHTML = `
@@ -208,14 +209,4 @@ function login() {
     console.error('Error:', error);
     alert('Login failed. Please try again later.');
   });
-}
-
-document.querySelector('.signup').addEventListener('click', function(event) {
-  event.preventDefault();
-  signup();
-});
-
-document.querySelector('.btn').addEventListener('click', function(event) {
-  event.preventDefault();
-  login();
 });

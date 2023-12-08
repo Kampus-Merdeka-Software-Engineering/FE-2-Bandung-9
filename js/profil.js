@@ -1,6 +1,4 @@
 // Ambil data dari localStorage saat halaman dimuat
-const DATABASE_URL = "postgresql://postgres:bD4-ba2BA4EF1CG1e25adBdE3D2gCg*E@roundhouse.proxy.rlwy.net:34839/railway";
-
 document.addEventListener('DOMContentLoaded', function() {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
@@ -17,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault(); // Hindari pengiriman default dari link
 
             // Lakukan permintaan logout ke server
-            fetch(`${DATABASE_URL}/logout`, {
+            fetch('/api/logout', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

@@ -1,5 +1,3 @@
-const DATABASE_URL = "postgresql://postgres:bD4-ba2BA4EF1CG1e25adBdE3D2gCg*E@roundhouse.proxy.rlwy.net:34839/railway";
-
 document.addEventListener('DOMContentLoaded', function() {
     checkLoginStatus();
   });
@@ -150,7 +148,7 @@ function submitForm() {
         time: formattedTime
     };
 
-    fetch(`${DATABASE_URL}/appointment`, {
+    fetch('/appointment', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
