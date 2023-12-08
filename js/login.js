@@ -207,7 +207,7 @@ function logIn() {
   });
 }
 
-document.querySelector('.signupbtn').addEventListener('click', function(event) {
+document.querySelector('.signup').addEventListener('click', function(event) {
   event.preventDefault();
   signUp();
 });
