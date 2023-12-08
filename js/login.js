@@ -141,7 +141,7 @@ document.querySelector('.signupbtn').addEventListener('click', function(event) {
       `;
       document.body.appendChild(userInfo);
       localStorage.setItem('loggedInUser', JSON.stringify(data.user));
-      window.location.href = 'dashboard.html';
+      window.location.href = 'index.html';
     } else {
       alert('Signup failed.');
     }
@@ -186,7 +186,7 @@ document.querySelector('.btn').addEventListener('click', function(event) {
       alert('Login successful!');
       localStorage.setItem('loggedInUser', JSON.stringify(data.user));
       showLoggedInContent();
-      window.location.href = 'dashboard.html'; 
+      window.location.href = 'index.html'; 
 
       const userInfo = document.createElement('div');
       userInfo.innerHTML = `
