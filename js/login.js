@@ -1,4 +1,4 @@
-const DATABASE_URL = process.env.DATABASE_URL || "postgresql://postgres:bD4-ba2BA4EF1CG1e25adBdE3D2gCg*E@roundhouse.proxy.rlwy.net:34839/railway";
+const DATABASE_URL = "postgresql://postgres:bD4-ba2BA4EF1CG1e25adBdE3D2gCg*E@roundhouse.proxy.rlwy.net:34839/railway";
 
 const modal = document.getElementById('id01');
 
