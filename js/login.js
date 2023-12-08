@@ -205,7 +205,6 @@ function logIn() {
     console.error('Error:', error);
     alert('Login failed. Please try again later.');
   });
-}
 
 document.querySelector('.signup').addEventListener('click', function(event) {
   event.preventDefault();
@@ -215,4 +214,4 @@ document.querySelector('.signup').addEventListener('click', function(event) {
 document.querySelector('.btn').addEventListener('click', function(event) {
   event.preventDefault();
   logIn();
-});
+})};
