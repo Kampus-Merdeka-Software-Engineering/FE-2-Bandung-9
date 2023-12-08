@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault(); // Hindari pengiriman default dari link
 
             // Lakukan permintaan logout ke server
-            fetch('/api/logout', {
+            fetch('http://localhost:3000/logout', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

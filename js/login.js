@@ -18,7 +18,7 @@ if (modal) {
 function logout() {
   try {
     localStorage.removeItem('loggedInUser');
-    fetch('/logout', { // Ubah endpoint menjadi '/logout'
+    fetch('http://localhost:3000/logout', { // Ubah endpoint menjadi '/logout'
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -86,12 +86,120 @@ function showLoggedOutContent() {
   }
 }
 
-// Function signUp() dan logIn() tetap sama
+function signup() {
+  const fullname = document.querySelector('input[name="fullname"]').value;
+  const username = document.querySelector('input[name="username"]').value;
+  const email = document.querySelector('input[name="signupemail"]').value;
+  const password = document.querySelector('input[name="signuppassword"]').value;
 
-document.querySelector('.logout').addEventListener('click', function(event) {
-  event.preventDefault();
-  logout();
-});
+  if (!fullname || !username || !email || !password) {
+    alert('Semua kolom harus diisi.');
+    return;
+  }
+
+  const data = {
+    fullname: fullname,
+    username: username,
+    email: email,
+    password: password
+  };
+
+  fetch('http://localhost:3000/signup', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok.');
+    }
+    return response.json();
+  })
+  .then(data => {
+    if (data.status === 'success') {
+      alert('Signup successful!');
+      const userInfo = document.createElement('div');
+      userInfo.innerHTML = `
+        <p>Status: ${data.status}</p>
+        <p>Message: ${data.message}</p>
+        <p>User:</p>
+        <ul>
+          <li>Full Name: ${data.user.fullname}</li>
+          <li>Username: ${data.user.username}</li>
+          <li>Email: ${data.user.email}</li>
+        </ul>
+      `;
+      document.body.appendChild(userInfo);
+      localStorage.setItem('loggedInUser', JSON.stringify(data.user));
+      window.location.href = 'index.html';
+    } else {
+      alert('Signup failed.');
+    }
+    console.log('Failed signup attempt with email:', data.email);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Signup failed. Please try again later.');
+  });
+}
+
+function login() {
+  const email = document.querySelector('input[name="loginemail"]').value;
+  const password = document.querySelector('input[name="loginpassword"]').value;
+
+  if (!email || !password) {
+    alert('Email dan password harus diisi.');
+    return;
+  }
+  const data = {
+    email: email,
+    password: password
+  };  
+  
+  fetch('http://localhost:3000/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok.');
+    }
+    return response.json();
+  })
+  .then(data => {
+    if (data.status === 'success') {
+      alert('Login successful!');
+      localStorage.setItem('loggedInUser', JSON.stringify(data.user));
+      showLoggedInContent();
+      window.location.href = 'index.html'; 
+
+      const userInfo = document.createElement('div');
+      userInfo.innerHTML = `
+        <p>Status: ${data.status}</p>
+        <p>Message: ${data.message}</p>
+        <p>User:</p>
+        <ul>
+          <li>Full Name: ${data.user.fullname}</li>
+          <li>Username: ${data.user.username}</li>
+          <li>Email: ${data.user.email}</li>
+        </ul>
+      `;
+      document.body.appendChild(userInfo);
+    } else {
+      alert('Login failed. Invalid email or password.');
+    }
+    console.log('Failed login attempt with email:', data.email);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Login failed. Please try again later.');
+  });
+}
 
 document.querySelector('.signup').addEventListener('click', function(event) {
   event.preventDefault();
@@ -100,10 +208,5 @@ document.querySelector('.signup').addEventListener('click', function(event) {
 
 document.querySelector('.btn').addEventListener('click', function(event) {
   event.preventDefault();
-  logIn();
-});
-
-// Panggil fungsi checkLoginStatus() untuk memeriksa status login saat halaman dimuat
-document.addEventListener('DOMContentLoaded', function() {
-  checkLoginStatus();
+  login();
 });

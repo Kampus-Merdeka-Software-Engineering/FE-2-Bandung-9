@@ -148,7 +148,7 @@ function submitForm() {
         time: formattedTime
     };
 
-    fetch('/appointment', {
+    fetch('http://localhost:3000/appointment', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

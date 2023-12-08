@@ -59,7 +59,7 @@ function prevSlide() {
 function logout() {
   try {
     localStorage.removeItem('loggedInUser');
-    fetch('/api/logout', {
+    fetch('http://localhost:3000/logout', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
