@@ -95,7 +95,7 @@ document.querySelector('.logout').addEventListener('click', function(event) {
 
 document.querySelector('.signup').addEventListener('click', function(event) {
   event.preventDefault();
-  signUp();
+  signup();
 });
 
 document.querySelector('.btn').addEventListener('click', function(event) {
