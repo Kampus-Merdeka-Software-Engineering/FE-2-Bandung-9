@@ -215,4 +215,4 @@ document.querySelector('.signup').addEventListener('click', function(event) {
 document.querySelector('.btn').addEventListener('click', function(event) {
   event.preventDefault();
   logIn();
-});
+})};
