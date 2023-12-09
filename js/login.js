@@ -1,5 +1,4 @@
 const modal = document.getElementById('id01');
-const DATABASE_URL = 'postgresql://postgres:bD4-ba2BA4EF1CG1e25adBdE3D2gCg*E@roundhouse.proxy.rlwy.net:34839/railway';
 
 function displayModal() {
   if (modal) {
@@ -19,7 +18,7 @@ if (modal) {
 function logout() {
   try {
     localStorage.removeItem('loggedInUser');
-    fetch(`${DATABASE_URL}/logout`,{  // Ubah endpoint menjadi '/logout'
+    fetch('http://localhost:3000/logout', { // Ubah endpoint menjadi '/logout'
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -105,7 +104,7 @@ function signup() {
     password: password
   };
 
-  fetch(`${DATABASE_URL}/signup`,{
+  fetch('http://localhost:3000/signup', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -159,7 +158,7 @@ function login() {
     password: password
   };  
   
-  fetch(`${DATABASE_URL}/login`,{
+  fetch('http://localhost:3000/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
