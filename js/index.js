@@ -1,3 +1,6 @@
+const API_BASE_URL = "https://lively-necklace-crab.cyclic.app/";
+
+
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -59,7 +62,7 @@ function prevSlide() {
 function logout() {
   try {
     localStorage.removeItem('loggedInUser');
-    fetch('http://localhost:3000/logout', {
+    fetch(`${API_BASE_URL}/logout`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

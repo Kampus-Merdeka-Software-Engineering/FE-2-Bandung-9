@@ -1,3 +1,5 @@
+const API_BASE_URL = "https://lively-necklace-crab.cyclic.app/";
+
 const modal = document.getElementById('id01');
 
 function displayModal() {
@@ -18,7 +20,7 @@ if (modal) {
 function logout() {
   try {
     localStorage.removeItem('loggedInUser');
-    fetch('http://localhost:3000/logout', { // Ubah endpoint menjadi '/logout'
+    fetch(`${API_BASE_URL}/logout`, { // Ubah endpoint menjadi '/logout'
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -104,7 +106,7 @@ function signup() {
     password: password
   };
 
-  fetch('http://localhost:3000/signup', {
+  fetch(`${API_BASE_URL}/signup`, {  
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -158,7 +160,7 @@ function login() {
     password: password
   };  
   
-  fetch('http://localhost:3000/login', {
+  fetch(`${API_BASE_URL}/login`, { 
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
