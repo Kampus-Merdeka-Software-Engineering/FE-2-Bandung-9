@@ -1,3 +1,5 @@
+const API_BASE_URL = "https://be-2-bandung-9-production.up.railway.app"
+
 // Ambil data dari localStorage saat halaman dimuat
 document.addEventListener('DOMContentLoaded', function() {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
@@ -15,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault(); // Hindari pengiriman default dari link
 
             // Lakukan permintaan logout ke server
-            fetch('http://localhost:3000/logout', {
+            fetch(`${API_BASE_URL}/logout`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

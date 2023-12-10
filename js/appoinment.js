@@ -1,3 +1,5 @@
+const API_BASE_URL = "https://be-2-bandung-9-production.up.railway.app"
+
 document.addEventListener('DOMContentLoaded', function() {
     checkLoginStatus();
   });
@@ -148,7 +150,7 @@ function submitForm() {
         time: formattedTime
     };
 
-    fetch('http://localhost:3000/appointment', {
+    fetch(`${API_BASE_URL}/appointment`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
