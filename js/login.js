@@ -20,7 +20,7 @@ if (modal) {
 function logout() {
   try {
     localStorage.removeItem('loggedInUser');
-    fetch(`${API_BASE_URL}/logout`, { // Ubah endpoint menjadi '/logout'
+    fetch('http://localhost:3000/logout', { // Ubah endpoint menjadi '/logout'
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -106,7 +106,7 @@ function signup() {
     password: password
   };
 
-  fetch(`${API_BASE_URL}/signup`, {
+  fetch('http://localhost:3000/signup', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -160,7 +160,7 @@ function login() {
     password: password
   };  
   
-  fetch(`${API_BASE_URL}/login`, {
+  fetch('http://localhost:3000/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

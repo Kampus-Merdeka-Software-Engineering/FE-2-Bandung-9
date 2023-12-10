@@ -1,6 +1,9 @@
 const API_BASE_URL = "https://be-2-bandung-9-production.up.railway.app"
 
 // Ambil data dari localStorage saat halaman dimuat
+
+const API_BASE_URL = "https://lively-necklace-crab.cyclic.app/";
+
 document.addEventListener('DOMContentLoaded', function() {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 

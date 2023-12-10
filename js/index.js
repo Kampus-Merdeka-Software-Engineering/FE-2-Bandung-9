@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 const API_BASE_URL = "https://be-2-bandung-9-production.up.railway.app"
+=======
+const API_BASE_URL = "https://lively-necklace-crab.cyclic.app/";
+
+>>>>>>> c4d4401cfd6277198bce4d15c46bccc75c0b088d
 
 let slideIndex = 1;
 showSlides(slideIndex);
