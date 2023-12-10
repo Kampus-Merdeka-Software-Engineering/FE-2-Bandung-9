@@ -8,8 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     if (loggedInUser) {
       // User sudah login, izinkan akses ke halaman appointment
-      window.location.href = 'appoinment.html';
-    } else {
+      window.location.replace = 'appoinment.html';
+    } 
+    else {
       // User belum login, biarkan mereka berada di halaman sebelumnya
       redirectToLogin();
     }
