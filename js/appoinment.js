@@ -136,12 +136,9 @@ function checkFormValidity() {
 
 function submitForm() {
     const time = document.getElementById('time').value;
-    const today = new Date();
-    const hours = today.getHours().toString().padStart(2, '0');
-    const minutes = today.getMinutes().toString().padStart(2, '0'); 
-    
-    const formattedTime = hours + ':' + minutes + ":00.000Z";
-
+    const enteredTime = new Date(time); // Mengonversi nilai waktu yang dimasukkan ke objek Date
+    const formattedTime = `${String(enteredTime.getHours()).padStart(2, '0')}:${String(enteredTime.getMinutes()).padStart(2, '0')}`;    
+  
     const data = {
         title: document.getElementById('title').value,
         name: document.getElementById('name').value,
