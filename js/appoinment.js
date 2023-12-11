@@ -137,10 +137,8 @@ function checkFormValidity() {
 function submitForm() {
     const time = document.getElementById('time').value;
     const today = new Date(); // Mendapatkan tanggal dan waktu saat ini
-    const hours = today.getHours().toString().padStart(2, '0'); // Mendapatkan jam (dalam format 2 digit)
-    const minutes = today.getMinutes().toString().padStart(2, '0'); // Mendapatkan menit (dalam format 2 digit)
-   
-    const formattedTime = hours + ':' + minutes;    
+    const isoTime = new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours(), today.getMinutes(), 0).toISOString();
+    const formattedTime = isoTime.substr(11, 5);    
     
     const data = {
         title: document.getElementById('title').value,
