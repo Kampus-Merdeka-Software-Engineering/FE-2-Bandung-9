@@ -135,15 +135,8 @@ function checkFormValidity() {
 
 
 function submitForm() {
-    const timeInput = document.getElementById('time').value; // Mengambil nilai waktu dari input dengan ID 'time'
-    
-    // Mengambil nilai jam dan menit dari input waktu
-    const selectedTime = new Date(`2000-01-01T${timeInput}:00`);
-    const hours = selectedTime.getHours().toString().padStart(2, '0');
-    const minutes = selectedTime.getMinutes().toString().padStart(2, '0');
-    
-    // Membentuk string waktu dalam format yang diinginkan (HH:mm:ss)
-    const formattedTime = `${hours}:${minutes}:00`;
+    const time = document.getElementById('time').value;
+    const formattedTime = new Date().toISOString().substr(0, 11) + time + ":00.000Z";
     
     const data = {
         title: document.getElementById('title').value,
