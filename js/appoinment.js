@@ -137,7 +137,9 @@ function checkFormValidity() {
 function submitForm() {
     const time = document.getElementById('time').value;
     const date = new Date(document.getElementById('date').value);
-    const formattedTime = new Date(date.toLocaleString('id-ID', { hour: 'numeric', minute: 'numeric', hour12: false })).toISOString();
+    const hoursMinutes = time.split(':');
+    date.setHours(hoursMinutes[0]);
+    date.setMinutes(hoursMinutes[1]);
 
     const data = {
         title: document.getElementById('title').value,
@@ -149,7 +151,7 @@ function submitForm() {
         email: document.getElementById('email').value,
         doctor: document.getElementById('doctor').value,
         date: date.toISOString(),
-        time: formattedTime,
+        time: date.toISOString(),
     };
 
     fetch(`${API_BASE_URL}/appointment`, {
