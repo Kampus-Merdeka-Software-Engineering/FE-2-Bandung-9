@@ -137,7 +137,7 @@ function checkFormValidity() {
 function submitForm() {
     const time = document.getElementById('time').value;
     const [hours, minutes] = time.split(':'); // Pisahkan jam dan menit
-
+    const date = new Date();
     // Setel jam, menit, dan detik ke 0
     date.setHours(hours);
     date.setMinutes(minutes);
