@@ -26,19 +26,19 @@ Features menu diatas terdiri dari :
 
 ## Penerapan Teknologi yang digunakan
 
-Tampilan HARAPAN POLYCLINIC dibangun menggunakan berbagai macam teknologi daiantaranya sebagai berikut :
+Tampilan HARAPAN POLYCLINIC dibangun menggunakan berbagai macam teknologi diantaranya sebagai berikut :
 | TEKNOLOGI          |   KETERANGAN   |
 |:-------------------|:--------------:|
-| HTML               | Digunakan untuk membuat struktur dasat situs website.|     
+| HTML               | Digunakan untuk membuat struktur dasar situs website.|     
 | CSS                | Teknologi yang digunakan untuk mengubah dan memperindah Style dan tampilan pada situs website|    
-| JavaScrript        | Menambahkan interaktivitas ke dalam situs website  |     
+| JavaScript        | Menambahkan interaktivitas ke dalam situs website  |     
 | Node.Js            | Menjalankan sisi server belakang project               |
-| Express            | Framework Node.js yang digunakan untuk pengembagnan web yang cepat               |
+| Express            | Framework Node.js yang digunakan untuk pengembangan web yang cepat               |
 | API                | Integrasi API data untuk menyediakan konten berkualitas kepada pengguna               |
 | Github             | Aplikasi / website yang digunakan untuk saling sharing dan upload code               | 
 
-## Pembahasan Features Utama Websit
-Deskripsi dibawah Ini adalah halaman "About Us" menjadi halaman utama dan sekaligus yang memperkenalkan HARAPAN POLYCLINIC adapun berikisikan informasi tentang Harapan Polyclinic beserta visi dan misinya.
+## Pembahasan Features Utama Website
+Deskripsi dibawah Ini adalah halaman "About Us" menjadi halaman utama dan sekaligus yang memperkenalkan HARAPAN POLYCLINIC adapun berisikan informasi tentang Harapan Polyclinic beserta visi dan misinya.
 
 <img src="https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_about%20us.jpg?raw=true" alt="About Us" width="700"/>
 
@@ -50,7 +50,7 @@ Halaman dibawah  merupakan halaman  login  dimana user dapat membuat akun dan me
 
 <img src="https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_login.jpg?raw=true" alt="Login" width="700"/>
 
-Halaman dibawah merupakan halaman appoitment dimana user dapat melakukan booking / pemesanan layanan HARAPAN POLYCLINIC, ketika sudah mengisi keseluruhan data pribadi dan menginginkan apa yang ingin dituju untuk keperluan kesehatannya serta mengecheck bahwa dokter tersebut sedang bekerja atau tidak, apabila semua accept maka booking anda akan succes.
+Halaman dibawah merupakan halaman appointment dimana user dapat melakukan booking / pemesanan layanan HARAPAN POLYCLINIC, ketika sudah mengisi keseluruhan data pribadi dan menginginkan apa yang ingin dituju untuk keperluan kesehatannya serta mengecheck bahwa dokter tersebut sedang bekerja atau tidak, apabila semua accept maka booking anda akan success.
 
 <img src="https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_appoitment.jpg?raw=true" alt="Appointment" width="700"/>
 
