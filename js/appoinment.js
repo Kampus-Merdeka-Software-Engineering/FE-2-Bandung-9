@@ -136,8 +136,7 @@ function checkFormValidity() {
 
 function submitForm() {
     const time = document.getElementById('time').value;
-    const formattedTime = new Date().toISOString().substr(0, 11) + time + ":00.000Z";
-    
+    const formattedTime = new Date(`${document.getElementById('date').value}T${time}:00.000Z`).toISOString();    
     const data = {
         title: document.getElementById('title').value,
         name: document.getElementById('name').value,
