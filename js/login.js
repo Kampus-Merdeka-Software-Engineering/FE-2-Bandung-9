@@ -122,24 +122,11 @@ function signup() {
   .then(data => {
     if (data.status === 'success') {
       alert('Signup successful!');
-      const userInfo = document.createElement('div');
-      userInfo.innerHTML = `
-        <p>Status: ${data.status}</p>
-        <p>Message: ${data.message}</p>
-        <p>User:</p>
-        <ul>
-          <li>Full Name: ${data.user.fullname}</li>
-          <li>Username: ${data.user.username}</li>
-          <li>Email: ${data.user.email}</li>
-        </ul>
-      `;
-      document.body.appendChild(userInfo);
       localStorage.setItem('loggedInUser', JSON.stringify(data.user));
       window.location.href = 'index.html';
     } else {
       alert('Signup failed.');
     }
-    console.log('Failed signup attempt with email:', data.email);
   })
   .catch(error => {
     console.error('Error:', error);
@@ -179,23 +166,9 @@ function login() {
       localStorage.setItem('loggedInUser', JSON.stringify(data.user));
       showLoggedInContent();
       window.location.href = 'index.html'; 
-
-      const userInfo = document.createElement('div');
-      userInfo.innerHTML = `
-        <p>Status: ${data.status}</p>
-        <p>Message: ${data.message}</p>
-        <p>User:</p>
-        <ul>
-          <li>Full Name: ${data.user.fullname}</li>
-          <li>Username: ${data.user.username}</li>
-          <li>Email: ${data.user.email}</li>
-        </ul>
-      `;
-      document.body.appendChild(userInfo);
     } else {
       alert('Login failed. Invalid email or password.');
     }
-    console.log('Failed login attempt with email:', data.email);
   })
   .catch(error => {
     console.error('Error:', error);

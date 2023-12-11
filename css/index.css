@@ -39,6 +39,9 @@ img {vertical-align: middle;}
 .topnav a.login {
   float: right;
 }
+.topnav a.logout {
+  float: right;
+}
 
 .topnav a.logo {
   height: 58px;
