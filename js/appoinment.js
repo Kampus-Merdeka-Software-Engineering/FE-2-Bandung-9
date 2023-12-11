@@ -136,14 +136,14 @@ function checkFormValidity() {
 
 function submitForm() {
     const time = document.getElementById('time').value;
-    const [hours, minutes] = time.split(':'); // Pisahkan jam dan menit
-    const date = new Date();
-    // Setel jam, menit, dan detik ke 0
-    date.setHours(hours);
-    date.setMinutes(minutes);
-    date.setSeconds(0);
-
-    const formattedTime = date.toISOString().substr(11, 5);
+    const formattedTime = time + ":00"; 
+    // Fungsi untuk mengonversi waktu dari UTC ke WIB    
+    function convertUTCtoWIB(utcDate) {
+        const utcTime = new Date(utcDate);
+        const utcOffset = 7; // Waktu Indonesia Barat (WIB) adalah UTC+7
+        const wibTime = new Date(utcTime.getTime() + utcOffset * 60 * 60 * 1000);
+        return wibTime;
+    }
 
     const data = {
         title: document.getElementById('title').value,
@@ -155,8 +155,9 @@ function submitForm() {
         email: document.getElementById('email').value,
         doctor: document.getElementById('doctor').value,
         date:  new Date(document.getElementById('date').value).toISOString(),
-        time: formattedTime
+        time: convertUTCtoWIB(formattedTime).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })
     };
+    console.log(data.time); 
 
 
     fetch(`${API_BASE_URL}/appointment`, {
