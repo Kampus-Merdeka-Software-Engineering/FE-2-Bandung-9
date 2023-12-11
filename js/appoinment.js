@@ -136,10 +136,14 @@ function checkFormValidity() {
 
 function submitForm() {
     const time = document.getElementById('time').value;
-    const date = new Date(document.getElementById('date').value);
-    const hoursMinutes = time.split(':');
-    date.setHours(hoursMinutes[0]);
-    date.setMinutes(hoursMinutes[1]);
+    const [hours, minutes] = time.split(':'); // Pisahkan jam dan menit
+
+    // Setel jam, menit, dan detik ke 0
+    date.setHours(hours);
+    date.setMinutes(minutes);
+    date.setSeconds(0);
+
+    const formattedTime = date.toISOString().substr(11, 5);
 
     const data = {
         title: document.getElementById('title').value,
@@ -150,9 +154,10 @@ function submitForm() {
         phone: document.getElementById('phone').value,
         email: document.getElementById('email').value,
         doctor: document.getElementById('doctor').value,
-        date: date.toISOString(),
-        time: date.toISOString(),
+        date:  new Date(document.getElementById('date').value).toISOString(),
+        time: formattedTime
     };
+
 
     fetch(`${API_BASE_URL}/appointment`, {
         method: 'POST',
