@@ -46,16 +46,16 @@ Halaman dibawah merupakan halaman Pricelist dimana terdiri dari halaman daftar h
 
 <img src="https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_pricelist.jpg?raw=true" alt="Price List" width="700"/>
 
-Halaman dibawah  merupakan halaman  login  dimana user dapat membuat akun dan mengirimkan informasi data dirinya kepada website kami agar dapat melakukan proses pemesanan atau booking pada halaman appoitment pada website kami.
+Halaman dibawah  merupakan halaman  login  dimana user dapat membuat akun dan mengirimkan informasi data dirinya kepada website kami agar dapat melakukan proses pemesanan atau booking pada halaman appointment pada website kami.
 
 <img src="https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_login.jpg?raw=true" alt="Login" width="700"/>
 
-Halaman dibawah merupakan halaman appointment dimana user dapat melakukan booking / pemesanan layanan HARAPAN POLYCLINIC, ketika sudah mengisi keseluruhan data pribadi dan menginginkan apa yang ingin dituju untuk keperluan kesehatannya serta mengecheck bahwa dokter tersebut sedang bekerja atau tidak, apabila semua accept maka booking anda akan success.
+Halaman dibawah merupakan halaman appointment dimana user dapat melakukan booking / pemesanan layanan HARAPAN POLYCLINIC, ketika sudah mengisi keseluruhan data pribadi dan menginginkan apa yang ingin dituju untuk keperluan kesehatannya serta mengecek bahwa dokter tersebut sedang bekerja atau tidak, apabila semua accept maka booking anda akan success.
 
 <img src="https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-9/blob/main/Screenshoot%20img/ss_appoitment.jpg?raw=true" alt="Appointment" width="700"/>
 
 ## Team 9 Section Bandung
-**HARAPAN POLYCLINIC** adalah project akhir dari sofware engineer yang telah dibangun dan diselesaikan oleh _group 9 Section Bandung KM AUG23_, MSIB (RevoU x MSIB Kemndikbudristek).
+**HARAPAN POLYCLINIC** adalah project akhir dari software engineer yang telah dibangun dan diselesaikan oleh _group 9 Section Bandung KM AUG23_, MSIB (RevoU x MSIB kemendikbudristek).
 Dimana perancangan dan pengembangan website ini dikembangkan oleh :
 
 |  Nama      | Role | 
