@@ -173,7 +173,7 @@ button:hover {
   padding: 10px 18px;
   background-color: #f44336;
 }
-.signupbtn {
+.signup {
   width: auto;
   padding: 10px 18px;
   background-color: #04AA6D;
@@ -253,7 +253,7 @@ span.psw {
      display: block;
      float: none;
   }
-  .cancelbtnn .signupbtn {
+  .cancelbtnn .signup {
      width: 100%;
   }
 }
